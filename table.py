@@ -13,6 +13,7 @@ class Board:
         self.count = 0
         self.list_xod = []
         self.list_boll = list()
+        self.list_move = list()
         self.flag = True
 
     def set_view(self, left, top, cell_size):
@@ -21,15 +22,15 @@ class Board:
         self.cell_size = cell_size
 
     def render(self, screen):
-        pygame.draw.rect(screen, pygame.Color('#EB6C63'), (
-            self.left, self.top, 350,
-            300))
+        # pygame.draw.rect(screen, pygame.Color('#D592F6'), (
+        #     self.left, self.top, 350,
+        #     300))
         for y in range(self.height):
             for x in range(self.width):
-                pygame.draw.rect(screen, pygame.Color('#DB3954'), (
-                    x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size,
-                    self.cell_size), 1)
-                pygame.draw.circle(screen, pygame.Color('#DB3954'),
+                # pygame.draw.rect(screen, pygame.Color('#A952D5'), (
+                #     x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size,
+                #     self.cell_size), 1)
+                pygame.draw.circle(screen, pygame.Color('#9C0BA6'),
                                    (x * self.cell_size + self.left + 25, y * self.cell_size + self.top + 25),
                                    22,
                                    4)

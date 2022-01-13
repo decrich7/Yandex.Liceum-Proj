@@ -2,7 +2,7 @@
 import pygame
 import os
 import sys
-
+from WINNER import get_win
 from table import Board
 from boal import BoalGame
 board = Board(7, 6)
@@ -28,6 +28,8 @@ while running:
             # print(boal.list)
             if boal.flag:
                 boal.drow_ball(screen, coord)
+                # print(boal.list_move)
+                get_win(boal.list_move)
             pygame.display.flip()
 
 
