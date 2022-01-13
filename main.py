@@ -29,8 +29,8 @@ while running:
             # print(board.get_cell(event.pos))
             # print(boal.list)
             if boal.flag:
-                boal.drow_ball(screen, coord)
                 print(boal.list_move)
+                boal.drow_ball(screen, coord)
                 get_win(boal.list_move)
             pygame.display.flip()
 
