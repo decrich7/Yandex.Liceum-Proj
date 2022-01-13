@@ -2,7 +2,8 @@ import pygame
 
 
 class Board:
-    def __init__(self, width, height):
+    def __init__(self, width, height, image):
+        self.image = image
         self.width = width
         self.height = height
         self.board = [[0] * width for i in range(height)]

@@ -4,7 +4,7 @@ def blue_win(blue):
     move_blue_y = 1
     move_blue_diagonal = 1
     blue.sort(key=lambda x: (x[0]))
-    print(blue)
+    # print(blue)
     for i in blue:
         if (i[0] + 1, i[1]) in blue:
             # print((i[0] + 1, i[1]))
@@ -23,11 +23,15 @@ def blue_win(blue):
             print('Синий выйграл!')
             return
     for i in blue:
-        if (i[0] + 1, i[1] + 1) in blue:
+        if (i[0] + 1, i[1] + 1) in blue and (i[0] + 2, i[1] + 2) in blue and (i[0] + 3, i[1] + 3) in blue:
+            # print((i[0] + 1, i[1] + 1))
+            # print((i[0] + 2, i[1] + 2))
+            # print((i[0] + 3, i[1] + 3))
             # print((i[0] + 1, i[1]))
             # print(1111)
             move_blue_diagonal += 1
-        if move_blue_diagonal == 4:
+            # print(22)
+        if move_blue_diagonal == 2:
             print('Синий выйграл!')
             return
 
@@ -55,11 +59,11 @@ def yellow_win(yellow):
             print('Желтый выйграл!')
             return
     for i in yellow:
-        if (i[0] + 1, i[1] + 1) in yellow:
+        if (i[0] + 1, i[1] + 1) in yellow and (i[0] + 2, i[1] + 2) in yellow and (i[0] + 3, i[1] + 3) in yellow:
             # print((i[0] + 1, i[1]))
             # print(1111)
             move_yellow_diagonal += 1
-        if move_yellow_diagonal == 4:
+        if move_yellow_diagonal == 2:
             print('Желтый выйграл!')
             return
 
@@ -82,7 +86,9 @@ def get_win(list_move):
     # print(yellow)
 
 
-get_win([(2, 0), (3, 0), (3, 1), (4, 0), (1, 0), (4, 1), (4, 2), (5, 0), (5, 1), (5, 2), (5, 3)])
+# get_win([(0, 0), (1, 0), (2, 0), (0, 1), (1, 1), (2, 1), (2, 2), (1, 2), (0, 2), (0, 3), (1, 3)])
+# get_win([(2, 0), (3, 0), (3, 1), (4, 0), (4, 1), (0, 0), (4, 2), (5, 0), (5, 1), (5, 2), (5, 3)])
+
 
 #         )
 #
