@@ -32,13 +32,11 @@ class BoalGame(Board):
         else:
             self.circle_drow(y=y, color='Blue', screen=screen, coord=coord, i=None)
 
-        # print(self.list_move)
     def drow_static(self, screen):
         count = 0
         for i in self.list_move[0:-1]:
             count += 1
             if count % 2 == 0:
-                # print((self.list[i[0]][i[1]]))
                 pygame.draw.circle(screen, pygame.Color('#EEF351'),
                                    (self.list[i[0]][i[1]][1] - 5, 435 - 50 * (i[1])), 20)
                 pygame.draw.circle(screen, pygame.Color('#FFA200'),
@@ -70,7 +68,7 @@ class BoalGame(Board):
                         break
             else:
                 y_pos = 120
-                v = 150  # пикселей в секунду
+                v = 150
                 clock = pygame.time.Clock()
                 while True:
                     screen.blit(self.image, (0, 0))
@@ -88,7 +86,7 @@ class BoalGame(Board):
         else:
             if i is not None:
                 y_pos = 120
-                v = 150  # пикселей в секунду
+                v = 150
                 clock = pygame.time.Clock()
                 while True:
                     screen.blit(self.image, (0, 0))
@@ -106,7 +104,7 @@ class BoalGame(Board):
                         break
             else:
                 y_pos = 120
-                v = 150  # пикселей в секунду
+                v = 150
                 clock = pygame.time.Clock()
                 while True:
                     screen.blit(self.image, (0, 0))

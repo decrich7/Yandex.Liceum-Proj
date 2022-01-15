@@ -23,22 +23,14 @@ class Board:
         self.cell_size = cell_size
 
     def render(self, screen):
-        # pygame.draw.rect(screen, pygame.Color('#D592F6'), (
-        #     self.left, self.top, 350,
-        #     300))
         for y in range(self.height):
             for x in range(self.width):
-                # pygame.draw.rect(screen, pygame.Color('#A952D5'), (
-                #     x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size,
-                #     self.cell_size), 1)
+
                 pygame.draw.circle(screen, pygame.Color('#9C0BA6'),
                                    (x * self.cell_size + self.left + 25, y * self.cell_size + self.top + 25),
                                    22,
                                    4)
-                # pygame.draw.circle(screen, pygame.Color('#DB3954'),
-                #                    (x * self.cell_size + self.left + 25, y * self.cell_size + self.top + 25),
-                #                    23,
-                #                    3)
+
 
     def coord(self):
         for y in range(self.height + 1):
