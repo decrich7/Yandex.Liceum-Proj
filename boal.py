@@ -4,6 +4,13 @@ from table import Board
 
 
 class BoalGame(Board):
+    def clean_data(self):
+        self.list = []
+        self.count = 0
+        self.list_xod = []
+        self.list_boll = list()
+        self.list_move = list()
+        self.flag = True
 
     def drow_ball(self, screen, coord):
         coord = list(coord)
