@@ -3,7 +3,7 @@ import pygame
 from WINNER import get_win
 from table import Board
 from boal import BoalGame
-
+from anim import Counter
 pygame.init()
 screen = pygame.display.set_mode((600, 500))
 running = True
@@ -37,6 +37,7 @@ board = Board(7, 6, image1)
 board.coord()
 boal = BoalGame(7, 6, image1)
 boal.coord()
+counter = Counter()
 
 fon = True
 # board.render(screen)
@@ -77,8 +78,11 @@ while running:
                         pygame.mixer.music.unpause()
                         boal.drow_static(screen)
                         if get_win(boal.list_move) == 'Blue':
+                            counter.add_blue()
+
                             font = pygame.font.Font(None, 55)
                             winner_b = font.render('Синий выйграл!', 200, pygame.Color('#1B4DF3'))
+                            counter.render_winner_count(screen)
                             screen.blit(replay_pc, (265, 75))
                             screen.blit(winner_b, (150, 30))
                             pygame.mixer.music.pause()
@@ -92,9 +96,13 @@ while running:
                             # board.render(screen)
                             pygame.display.flip()
                         elif get_win(boal.list_move) == 'Yellow':
+                            counter.add_yellow()
+
                             boal.flag = False
                             font = pygame.font.Font(None, 55)
                             winner_y = font.render('Желтый выйграл!', 200, pygame.Color('#EEEE3D'))
+                            counter.render_winner_count(screen)
+
                             screen.blit(winner_y, (150, 30))
                             screen.blit(replay_pc, (265, 75))
 
