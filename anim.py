@@ -19,3 +19,15 @@ class Counter:
         yellow = f1.render(f'Желтый: {self.yellow}', 7, pygame.Color('#EEEE3D'))
         screen.blit(blue, (10, 80))
         screen.blit(yellow, (10, 115))
+
+
+class Sound:
+    def __init__(self, fon=None, win=None, click=None):
+        self.fon_path = fon
+        self.win_path = win
+        self.click_path = click
+
+    def sound_fon_play(self):
+        pygame.mixer.music.load(self.fon_path)
+        pygame.mixer.music.set_volume(0.4)
+        pygame.mixer.music.play(-1)
